@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>update</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HCI Homedash+Quiz+Video</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- ===================== HOME SCREEN ===================== -->
+      <div id="homeScreen" class="phone">
+        <!-- Header -->
+        <header class="home-header">
+          <div>
+            <p class="hello">Good afternoon,</p>
+            <h1 class="name">Darren</h1>
+          </div>
+          <div class="avatar">
+            <span>👋</span>
+          </div>
+        </header>
+
+        <!-- Sub header -->
+        <section class="home-sub">
+          <p class="small-label">Today’s goal</p>
+          <p class="goal-text">1 song + 1 quiz in English</p>
+        </section>
+
+        <!-- Main cards -->
+        <main class="home-main">
+          <!-- Continue learning card -->
+          <section class="card continue-card">
+            <div class="card-left">
+              <p class="chip">Continue</p>
+              <h2 class="card-title">Alphabet Song – Part 1</h2>
+              <p class="card-meta">3 min · English · Beginner</p>
+              <div class="progress-row">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 45%"></div>
+                </div>
+                <span class="progress-txt">45%</span>
+              </div>
+            </div>
+            <div class="card-right">
+              <button id="watchBtn" class="circle-btn">▶</button>
+            </div>
+          </section>
+
+          <!-- Actions -->
+          <section class="actions">
+            <button id="videoBtn" class="action-btn primary">
+              <span>🎬 Watch Video Lesson</span>
+              <small>English alphabet song</small>
+            </button>
+
+            <button id="quizBtn" class="action-btn outline">
+              <span>📝 Take Quiz</span>
+              <small>5 questions · alphabet</small>
+            </button>
+          </section>
+
+          <!-- Stats -->
+          <section class="stats">
+            <div class="stat-item">
+              <p class="stat-label">Minutes today</p>
+              <p class="stat-value">12</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-label">Quizzes done</p>
+              <p class="stat-value">1</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-label">Streak</p>
+              <p class="stat-value">3🔥</p>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer hint -->
+        <footer class="home-footer">
+          <p id="homeHintText" class="hint-text">
+            Tap a button above to start learning.
+          </p>
+        </footer>
+
+        <!-- ✅ Home 的点击音效 audio 已删除 -->
+      </div>
+
+      <!-- ===================== VIDEO SCREEN ===================== -->
+      <div id="videoScreen" class="phone" style="display: none">
+        <!-- Header -->
+        <header class="video-header">
+          <button class="icon-btn" id="backBtn">←</button>
+          <div class="video-title-wrap">
+            <p class="video-subtitle">Module 1 · English</p>
+            <h1 class="video-title">Learn the Alphabet with Songs</h1>
+          </div>
+          <button class="icon-btn dots">⋯</button>
+        </header>
+
+        <!-- Video area -->
+        <main class="video-main">
+          <div class="video-frame-wrap">
+            <div class="video-frame-inner">
+              <iframe
+                id="lessonPlayer"
+                src="https://www.youtube.com/embed/Xh7lrudBzh8?si=8MHGMkKXtkI_nG0o"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Lesson selector -->
+          <section class="lesson-selector">
+            <p class="label">Lessons in this topic</p>
+            <div class="lesson-chips">
+              <button class="lesson-chip active" data-video="0">
+                <span class="chip-index">01</span>
+                <span class="chip-text">
+                  ABC Phonics Song
+                  <small>3 min · Kids English</small>
+                </span>
+              </button>
+              <button class="lesson-chip" data-video="1">
+                <span class="chip-index">02</span>
+                <span class="chip-text">
+                  Alphabet Song (A–Z)
+                  <small>4 min · Sing & Learn</small>
+                </span>
+              </button>
+            </div>
+          </section>
+
+          <!-- Description -->
+          <section class="lesson-desc">
+            <p class="label">Description</p>
+            <p class="desc-text">
+              This video helps young learners remember the English alphabet
+              using music, rhythm and clear pronunciation. Repeat after the song
+              and follow the letters on the screen.
+            </p>
+          </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="video-footer">
+          <button id="playLessonBtn" class="primary-btn">▶ Play Lesson</button>
+          <p id="videoHintText" class="hint-text">
+            Tip: Tap the lesson card above to switch videos.
+          </p>
+        </footer>
+
+        <!-- ✅ Video 的点击音效 audio 已删除 -->
+      </div>
+
+      <!-- ===================== QUIZ SCREEN ===================== -->
+      <div id="quizScreen" class="phone" style="display: none">
+        <header class="quiz-header">
+          <button id="quizCloseBtn" class="close-btn">✕</button>
+
+          <div class="progress-wrap">
+            <div class="quiz-progress-bar">
+              <div id="progressFill" class="quiz-progress-fill"></div>
+            </div>
+            <span id="progressText" class="progress-text"></span>
+          </div>
+        </header>
+
+        <main class="quiz-content">
+          <div id="quizTag" class="quiz-tag"></div>
+          <h1 id="quizQuestion" class="quiz-question"></h1>
+          <div id="optionsBox" class="options"></div>
+        </main>
+
+        <footer class="quiz-footer">
+          <button id="checkBtn" class="primary-btn">Check Answer</button>
+          <button id="nextBtn" class="primary-btn" style="display: none">
+            Next
+          </button>
+          <p id="resultText" class="result-text"></p>
+        </footer>
+
+        <!-- ✅ Quiz 音效保留（你没要求删除） -->
+        <audio
+          id="sound-correct"
+          src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"
+        ></audio>
+        <audio
+          id="sound-wrong"
+          src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"
+        ></audio>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
